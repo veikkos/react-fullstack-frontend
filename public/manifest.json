@@ -1,0 +1,8 @@
+{
+  "short_name": "React Fullstack Frontend",
+  "name": "React Frontend",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

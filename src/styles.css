@@ -1,0 +1,51 @@
+/* Colors from https://coolors.co/540d6e-ee4266-ffd23f-f3fcf0-1f271b */
+
+body {
+    background-color: #F3FCF0;
+    color: #1F271B;
+    padding: 20px;
+    display: flex;  
+    flex-wrap: wrap;
+}
+
+.form {
+    background: #FFD23F;
+    padding: 5px;
+}
+
+.input {
+    padding: 5px;
+    display:inline-block;
+}
+
+/* Mostly borrowed from https://reactcommunity.org/react-transition-group/transition-group */
+
+.item {
+    color: white;
+    background-color: #EE4266;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    padding: 5px;
+    margin: 10px;
+}
+
+.item-enter {
+    opacity: 0;
+}
+
+.item-enter {
+    opacity: 0;
+}
+
+.item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.item-exit {
+    opacity: 1;
+}
+
+.item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
