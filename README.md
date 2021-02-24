@@ -3,7 +3,7 @@
 This frontend works together with [Node.js/MongoDB
 backend](https://github.com/veikkos/react-fullstack-backend).
 
-![Cover](cover.png)
+![Cover](cover.gif)
 
 ## Usage
 
