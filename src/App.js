@@ -9,7 +9,8 @@ const backendUri = 'http://localhost:3001/address'
 const App = () => {
   const [book, setBook] = useState([])
 
-  const refresh = () => {
+  // Fetch list of addresses from backend and push them to "book"
+  const onRefresh = () => {
     axios
       .get(backendUri)
       .then(response => {
@@ -17,29 +18,26 @@ const App = () => {
       })
   }
 
-  useEffect(() => {
-    refresh()
-  }, [])
+  // Initial refresh of address book on backend
+  useEffect(() => onRefresh(), [])
 
-  const submit = ({ name, address, developer }) => {
+  // User submitted new addres to the book
+  const onSubmit = ({ name, address, developer }) => {
     axios
       .post(backendUri, { name, address, developer })
-      .then(() => {
-        refresh()
-      })
+      .then(() => onRefresh())
   }
 
+  // User removed an address from the book - remove it from backend
   const onRemove = (id) => {
     axios
       .delete(backendUri, { params: { id } })
-      .then(() => {
-        refresh()
-      })
+      .then(() => onRefresh())
   }
 
   return (
     <div>
-      <InputForm submit={submit} />
+      <InputForm onSubmit={onSubmit} />
       <AddressList book={book} onRemove={onRemove} />
     </div>
   )

@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import strings from '../localization/localization.js'
 
-const InputForm = ({ submit }) => {
+// Simple input form which takes user's address
+const InputForm = ({ onSubmit }) => {
   const [name, setName] = useState('Veikko')
   const [address, setAddress] = useState('Mannerheimintie')
   const [developer, setDeveloper] = useState(false)
 
-  const submitInternal = (event) => {
+  // Middleman callback which calls external "onSubmit" function
+  const onSubmitInternal = (event) => {
     event.preventDefault()
     if (name.length && address.length) {
-      submit({ name, address, developer })
+      onSubmit({ name, address, developer })
       setName('')
       setAddress('')
     }
   }
 
   return (
-    <form className='form' onSubmit={submitInternal}>
+    <form className='form' onSubmit={onSubmitInternal}>
       <label className='input'>
         {strings.name}:
         <input type="text"
