@@ -1,5 +1,8 @@
 # React frontend example
 
+[![Node.js
+CI](https://github.com/veikkos/react-fullstack-frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/veikkos/react-fullstack-frontend/actions/workflows/node.js.yml)
+
 This frontend works together with [Node.js/MongoDB
 backend](https://github.com/veikkos/react-fullstack-backend).
 
@@ -14,6 +17,7 @@ npm install
 npm start
 ```
 
-Browser should open to `http://localhost:3000/`. You can use it to add
-users to address book. All changes are synchronized to backend and
-stored persistently.
+Browser should open to `http://localhost:3000/`. You can use the
+frontend to manage users in the address book. All changes are
+synchronized to backend and stored persistently. Frontend is localized
+in English and Finnish depending on your browser's locale.
