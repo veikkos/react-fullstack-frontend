@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import InputForm from './components/InputForm.js'
 import AddressList from './components/AddressList.js'
-import './styles.css';
+import './styles.css'
 
 const backendUri = 'http://localhost:3001/address'
 

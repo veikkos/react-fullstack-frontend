@@ -3,12 +3,12 @@ import strings from '../localization/localization.js'
 import {
   Container,
   ListGroup,
-} from 'react-bootstrap';
+} from 'react-bootstrap'
 import {
   CSSTransition,
   TransitionGroup,
-} from 'react-transition-group';
-import '../styles.css';
+} from 'react-transition-group'
+import '../styles.css'
 
 const AddressList = ({ book, onRemove }) => {
   const [showDevelopers, setShowDevelopers] = useState(true)
