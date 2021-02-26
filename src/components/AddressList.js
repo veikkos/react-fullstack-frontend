@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import strings from '../localization/localization.js'
 import {
   Container,
   ListGroup,
@@ -9,12 +10,12 @@ import {
 } from 'react-transition-group';
 import '../styles.css';
 
-function AddressList({ book, onRemove }) {
+const AddressList = ({ book, onRemove }) => {
   const [showDevelopers, setShowDevelopers] = useState(true)
 
   const ShowDevs = () => (
     <label className='input'>
-      Show devs:
+      {strings.showDevelopers}:
       <input
         name="showDevs"
         type="checkbox"
@@ -23,7 +24,7 @@ function AddressList({ book, onRemove }) {
     </label>
   )
 
-  function Addresses() {
+  const Addresses = () => {
     return (
       <Container style={{ marginTop: '20px' }}>
         <ListGroup>
@@ -34,7 +35,7 @@ function AddressList({ book, onRemove }) {
                 timeout={500}
                 classNames="item">
                 <ListGroup.Item className='item' onClick={() => { onRemove(item.id) }}>
-                  {item.name} - {item.address}{item.developer && ' - DEV'}
+                  {item.name} - {item.address}{item.developer && ` (${strings.developer})`}
                 </ListGroup.Item>
               </CSSTransition>
             ))}

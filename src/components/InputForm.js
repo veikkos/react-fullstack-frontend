@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import strings from '../localization/localization.js'
 
 const InputForm = ({ submit }) => {
   const [name, setName] = useState('Veikko')
@@ -17,28 +18,28 @@ const InputForm = ({ submit }) => {
   return (
     <form className='form' onSubmit={submitInternal}>
       <label className='input'>
-        Name:
+        {strings.name}:
         <input type="text"
           name="name"
           value={name}
           onChange={({ target }) => setName(target.value)} />
       </label>
       <label className='input'>
-        Address:
+        {strings.address}:
         <input type="text"
           name="address"
           value={address}
           onChange={({ target }) => setAddress(target.value)} />
       </label>
       <label className='input'>
-        Developer:
+        {strings.developer}:
         <input
           name="developer"
           type="checkbox"
           defaultChecked={developer}
           onChange={() => setDeveloper(!developer)} />
       </label>
-      <button type="submit">Add</button>
+      <button type="submit">{strings.add}</button>
     </form>
   )
 }
