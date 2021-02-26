@@ -24,21 +24,24 @@ const AddressList = ({ book, onRemove }) => {
     </label>
   )
 
+  const PopulateList = () =>
+    book.filter(item => showDevelopers || !item.developer).map(item => (
+      <CSSTransition
+        key={item.id}
+        timeout={500}
+        classNames="item">
+        <ListGroup.Item className='item' onClick={() => { onRemove(item.id) }}>
+          {item.name} - {item.address}{item.developer && ` (${strings.developer})`}
+        </ListGroup.Item>
+      </CSSTransition>
+    ))
+
   const Addresses = () => {
     return (
       <Container style={{ marginTop: '20px' }}>
         <ListGroup>
           <TransitionGroup>
-            {book.filter(item => showDevelopers || !item.developer).map(item => (
-              <CSSTransition
-                key={item.id}
-                timeout={500}
-                classNames="item">
-                <ListGroup.Item className='item' onClick={() => { onRemove(item.id) }}>
-                  {item.name} - {item.address}{item.developer && ` (${strings.developer})`}
-                </ListGroup.Item>
-              </CSSTransition>
-            ))}
+            {PopulateList()}
           </TransitionGroup>
         </ListGroup>
       </Container>
